@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+      <div class="col-md-4" id="form">
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input #Email = "ngModel" type="email" class="form-control" [(ngModel)] = "username" name="user" id="email" required>
+        </div>
+        <div [hidden]="Email.valid || Email.pristine">
+          value of email is in valid<br>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input #Pass = "ngModel" type="password" class="form-control" [(ngModel)] = "password" name="pass" id="pwd" required>
+        </div>
+        <button [disabled]="Email.invalid || Pass.invalid" type="submit" (click)="navigateToHome()" class="btn btn-primary">Submit</button>
+      </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
